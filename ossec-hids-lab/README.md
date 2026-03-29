@@ -1,4 +1,7 @@
 # OSSEC HIDS Lab — Host-Based Intrusion Detection System
+> **Cybersecurity Project | March 2026**
+> **Johnbosco Ibeneme** | 
+> 📧 chizzyibeneme@gmail.com | 🔗 [LinkedIn](https://linkedin.com/in/chizitem-ibeneme) | 💻 [GitHub](https://github.com/Chizitem-sec)
 
 > A full end-to-end lab deploying OSSEC v4.0.0 as a Host-Based Intrusion Detection System (HIDS), monitoring a Windows 11 endpoint, simulating adversary activity via Metasploit, and demonstrating real-time intrusion detection through the OSSEC Web UI.
 
