@@ -57,7 +57,7 @@ All virtual machines are hosted on macOS using **UTM** (QEMU-based hypervisor) w
 
 | VM | Role | OS | IP Address |
 |----|------|----|-----------|
-| darkseid | OSSEC Manager / Server | Ubuntu 24.04 LTS | 192.168.64.5 |
+| ubuntu | OSSEC Manager / Server | Ubuntu 24.04 LTS | 192.168.64.5 |
 | kali | Attacker | Kali Linux (rolling) | 192.168.64.8 |
 | Windows | Target / Monitored Endpoint | Windows 11 24H2 | 192.168.64.9 |
 
