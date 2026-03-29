@@ -17,7 +17,7 @@ Host-Based Intrusion Detection lab using OSSEC v4.0.0. Deploys an OSSEC manager 
 
 | Machine | Role | OS |
 |---------|------|----|
-| darkseid | OSSEC Manager | Ubuntu 24.04 LTS |
+| ubuntu | OSSEC Manager | Ubuntu 24.04 LTS |
 | kali | Attacker | Kali Linux |
 | Windows | Monitored Target | Windows 11 24H2 |
 
