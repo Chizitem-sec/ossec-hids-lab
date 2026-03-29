@@ -156,7 +156,7 @@ sudo ./install.sh
 *The extracted OSSEC source directory listing showing the full project structure: `install.sh`, `src/`, `active-response/`, `etc/`, `contrib/`, and Win32 source files.*
 
 ![Install Script Language Selection](screenshots/03-server-installation/11-install-script-language-selection.png)
-*The OSSEC install script prompting for installation language. English (`en`) selected as default. The script detects the host system automatically: Linux darkseid 6.8.0-106-generic, User: root.*
+*The OSSEC install script prompting for installation language. English (`en`) selected as default.*
 
 ![Install Server Type and Directory](screenshots/03-server-installation/12-install-server-type-and-directory.png)
 *Installation type set to `server` — this configures OSSEC as a central manager to receive agent data. Installation directory defaulted to `/var/ossec`. Email notifications disabled for the lab.*
