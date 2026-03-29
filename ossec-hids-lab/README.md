@@ -99,7 +99,6 @@ All virtual machines are hosted on macOS using **UTM** (QEMU-based hypervisor) w
   - User group membership changes (Windows Event ID 4732)
   - RDP service state modification
   - Login/logoff session activity
-  - AppArmor policy violations (Ubuntu-side)
 
 ---
 
